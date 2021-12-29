@@ -1,0 +1,19 @@
+tiket = int(input("Введите количество билетов: "))
+print(tiket)
+price = []
+for i in range(1, tiket+1):
+    age = int(input(f"Введите возраст {i} посетителя: "))
+    if 0 < age < 18:
+        price.append(0)
+    elif 17 < age < 25:
+        price.append(990)
+    elif 24 < age < 100:
+        price.append(1390)
+    else:
+        print('Введен некорректный возраст.')
+
+    if tiket > 3:
+        print("Cумма к оплате с учетом скидок", sum(price) - ((sum(price) / 100) * 10), "рублей")
+    else:
+        print("Сумма к оплате", sum(price), "рублей")
+
